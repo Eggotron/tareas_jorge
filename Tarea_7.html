@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/color/jquery.color.svg-names-2.1.2.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+
+<div class="clear"></div>
+
+<style type="text/css" media="screen">
+	
+	body{
+		margin:0;
+		padding:0;
+		font-family: 'Lato', sans-serif;	
+	}
+	
+	.clear{
+		clear:both;	
+	}
+
+	#left{
+		background: #ecf0f1;
+		width:50%;
+		height:100%;
+		position:absolute;
+		left:0;
+		top:0;
+	}
+	
+	#left h1{
+		font-size:6em;
+		color:#1abc9c;
+		text-align:center;
+		padding-bottom:15px;
+		padding-top:15px;
+	}
+	
+	.line{
+		border-top:5px solid #1abc9c;	
+	}
+	
+	.line2{
+		border-top:5px solid #fff;	
+	}
+	
+	#right{
+		background: #1abc9c;
+		width:50%;
+		height:100%;
+		position:absolute;
+		right:0;
+		top:0;
+	}
+	
+	#right h1{
+		font-size:6em;
+		color:#fff;
+		text-align:center;
+		padding-bottom:15px;
+		padding-top:15px;
+	}
+	
+	#return{
+		background: url(img/flecha.svg) no-repeat center center;
+		background-size:contain;
+		transform: rotate(180deg);
+		width:50px;
+		height:50px;
+		position:relative;
+		float:right;
+		margin:30px 30px;
+		cursor:pointer;
+	}
+	
+	#return2{
+		background: url(img/flecha.svg) no-repeat center center;
+		background-size:contain;
+		width:50px;
+		height:50px;
+		position:relative;
+		margin:30px 30px;
+		cursor:pointer;
+	}
+	
+	#leftupper{
+		background: #7f8c8d;
+		height:100%;
+		position:absolute;
+		left:0;
+		top:0;
+		z-index:4;
+	}
+	
+	#leftupper h1{
+		font-size:6em;
+		color:#fff;
+		text-align:center;
+		padding-bottom:15px;
+		padding-top:15px;
+		position:relative;
+	}
+	
+	#rightupper{
+		background: #16a085;
+		height:100%;
+		position:absolute;
+		right:0;
+		top:0;
+		z-index:4;
+	}
+	
+	#rightupper h1{
+		font-size:6em;
+		color:#fff;
+		text-align:center;
+		padding-bottom:15px;
+		padding-top:15px;
+		position:relative;
+	}
+
+</style>
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$("#return").hide();
+		$("#return2").hide();
+		$("#inside").hide();
+		$("#inside2").hide();
+		
+		$("#left").click(function(){
+			$("#leftupper").animate({
+				width: "80%",
+			}, 500)
+			
+			$("#left").animate({
+				left:"685px",
+			}, 500)
+			
+			$("#right").css("z-index","-1");
+			
+			$("#return").show(500);	
+			
+			$("#inside").fadeIn(500);	
+		});
+		
+		$("#right").click(function(){
+			$("#rightupper").animate({
+				width: "80%",
+			}, 500)
+			
+			$("#right").animate({
+				right:"685px",
+			}, 500)
+			
+			$("#left").css("z-index","-1");
+			
+			$("#return2").show(500);
+			
+			$("#inside2").fadeIn(500);
+		});
+		
+		$("#return").click(function(){
+			$("#leftupper").animate({
+				width: "0px",
+			}, 500)
+			
+			$("#left").animate({
+				left:"0px",
+			}, 500)
+			
+			$("#right").css("z-index","2");
+			
+			$("#left").css("z-index","3");
+			
+			$("#return").hide(500);
+			
+			$("#inside").fadeOut(500);
+		});
+		
+		$("#return2").click(function(){
+			$("#rightupper").animate({
+				width: "0px",
+			}, 500)
+			
+			$("#right").animate({
+				right:"0px",
+			}, 500)
+			
+			$("#left").css("z-index","2");
+			
+			$("#right").css("z-index","3");
+			
+			$("#return2").hide(500);
+			
+			$("#inside2").fadeOut(500);
+			
+		});
+    });
+</script>
+
+<div id="left">
+	<h1>CLICK ME! </br> <span class="line">NOW!</span></h1>
+</div>
+<div id="leftupper">
+	<h1 id="inside">COOL?</br> <span class="line2">OR NOT COOL?</span></h1>
+	<div id="return"></div>
+</div>    
+<div id="right">
+	<h1>NO!</br> <span class="line2">CLICK ME</span></h1>
+</div>
+<div id="rightupper">
+	<h1 id="inside2">HEY!</br> <span class="line2">WHAT'S UP?</span></h1>
+	<div id="return2"></div>
+</div>
+<div class="clear"></div>
+
+</body>
+</html>
