@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Tercer Ejercicio Javascript</title>
+	<script type="text/javascript" charset="utf-8">
+		//function first(){
+		//	alert(8+5);
+		//};
+		
+		//function second(valor1, valor2){
+		//	alert(valor1+valor2);
+		//};
+		
+		function escribe(){
+			document.getElementById("pais").value="Hola, Jorge";
+			document.getElementById("pais").focus();
+		};
+		
+		function borra(){
+			document.getElementById("pais").value="";
+		};
+		
+		function escribePais(){
+			document.getElementById("contiene-pais").innerHTML=document.getElementById("pais").value;
+		};
+	</script>
+    <style type="text/css">
+		#contiene-pais{
+			font-size:100px;
+			text-align:center;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="text" name"pais" value="" id="pais">
+    <input type="button" name="btn-escribe" value="Click me to submit" id="btn" onClick="escribe();">
+    <input type="button" name="btn-borra" value="Erase" id="btn" onClick="borra();">
+    <input type="button" name="btn-pais" value="Show me what I wrote" id="btn" onClick="escribePais();">
+    
+    <div id="contiene-pais"></div>
+    
+	<script type="text/javascript" charset="utf-8">
+		//first();
+		
+		//second(10,5);
+		
+		//escribe();
+	</script>
+</body>
+</html>
