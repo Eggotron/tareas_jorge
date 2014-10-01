@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+<!-- CSS SECTION -->
+<!-- /////////// -->
+<style>
+	
+	*{
+		margin:0;
+		padding:0;	
+	}
+	
+	body{
+		background-size:cover;	
+	}
+	
+	h1{
+		font-family: 'Montserrat', sans-serif;
+		text-transform:uppercase;
+		font-size:4em;
+		width:800px;
+		padding-top:200px;
+		text-align:center;
+		margin: 0 auto;
+		color:#fff;
+		text-shadow: 2px 2px 4px #000;
+	}
+	
+	.style{
+		font-size:2em;	
+	}
+	
+</style>
+
+<!--JAVASCRIPT SECTION -->
+<!-- ///////////////// -->
+<script type="text/javascript">
+
+   var date = new Date(); 
+      document.write("<h1>La hora actual es: "+ "<span class='style'>" +date.getHours() + ":" + date.getMinutes() + "</span>" + "</h1>");
+	
+	//AMANECER
+	if(date.getHours() == 7 || date.getHours() == 8 || date.getHours() == 9){
+		document.body.style.backgroundImage="url('img/amanecer.jpg')";
+	
+	//DIA
+	}else if(date.getHours()<= 11){
+		document.body.style.backgroundImage="url('img/dia.jpg')";
+
+	//ATARDECER	
+	}else if(date.getHours() <= 19){
+		document.body.style.backgroundImage="url('img/atardecer.jpg')";
+	
+	//NOCHE	
+	}else if(date.getHours() <= 24){
+		document.body.style.backgroundImage="url('img/noche.jpg')";
+	};
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
