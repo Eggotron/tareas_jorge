@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<title>Examen Primer Parcial - Jorge Peña</title>
+<style>
+
+body{
+	background:#ecf0f1;	
+}
+
+h1{
+	float:left;	
+}
+
+.clear{
+	clear:both;
+}
+
+#dia{
+
+}
+
+#mes{
+	padding-top:15px;
+}
+
+.cuadrias {
+	width: 50px;
+	height: 50px;
+	background: #01c7de;
+	float: left;
+	margin:5px 5px;
+}
+
+.cuadmes {
+	width: 20px;
+	height:20px;
+	background: #de9301;
+	float: left;
+	margin:5px 5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Dias</h1>
+<div class="clear"></div>
+<div id="dia"></div>
+<div class="clear"></div>
+<h1>Mes</h1>
+<div class="clear"></div>
+<div id="mes"></div>
+
+	<script type="text/javascript" charset="utf-8">
+			var fecha = new Date();
+			var dia = fecha.getDate();
+			var mes = fecha.getMonth()+1;
+			
+			function crearDias(){
+		
+				for(i= 1; i<=dia; i++){
+					jQuery('#dia').append('<div class="cuadrias"></div>')
+				};
+			};
+			
+			function crearMes(){
+					
+				for(i= 1; i<=mes; i++){
+					jQuery('#mes').append('<div class="cuadmes"></div>')
+				};
+
+			};
+			
+			crearDias();
+			crearMes();
+			
+			$(document).ready(function() {
+				$(".cuadrias").click(function(){
+					$(this).fadeOut(5000);
+				});
+		
+				
+				$(".cuadmes").click(function(){
+					$(this).fadeOut(5000);
+				});
+			
+			});
+	</script>
+    
+</body>
+</html>
